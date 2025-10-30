@@ -1,0 +1,50 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/movies?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+    username: root
+    password: 12345s
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: sanjugm2344@gmail.com
+    password: bhsbybhkukcnmnxo
+
+   # <-- your new App Password
+    properties:
+      mail.smtp.auth: true
+      mail.smtp.starttls.enable: true
+      mail.debug: true
+
+logging:
+  level:
+    org.springframework.mail: DEBUG
+
+movie:
+  poster:
+    upload:
+      path: F:/movieAPI-backend-YT-master/uploads/posters
+
+base:
+  url: http://localhost:8080
+
+app:
+  jwt:
+    secret: 11BRE54OY0LbTzsryWAuk8_wOXEyv5j26LoutTmmqFzsiVieXUWw6Lf3HkC7jhJ938UO24C6AZgoG21yXx
